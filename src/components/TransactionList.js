@@ -1,13 +1,17 @@
 import React from "react";
+import TransactionItem from "./TransactionsItem";
+// import { GlobalContext } from "../context/GlobalState";
 
-function TransactionList() {
+function TransactionList({ Transactions }) {
+  console.log(Transactions);
+
   return (
     <>
       <h3>History</h3>
       <ul id='list'>
-        <li className='minus'>
-          cash <span>-$400</span> <button className='delete-btn'>x</button>
-        </li>
+        {Transactions.map(({ id, text, amount }) => (
+          <TransactionItem key={id} text={text} amount={amount} />
+        ))}
       </ul>
     </>
   );
