@@ -1,5 +1,6 @@
 import React from "react";
 import TransactionItem from "./TransactionsItem";
+import "../App.css";
 // import { GlobalContext } from "../context/GlobalState";
 
 function TransactionList({ Transactions }) {
@@ -8,7 +9,7 @@ function TransactionList({ Transactions }) {
   return (
     <>
       <h3>History</h3>
-      <ul id='list'>
+      <ul className='list'>
         {Transactions.map(({ id, text, amount }) => (
           <TransactionItem key={id} text={text} amount={amount} />
         ))}
