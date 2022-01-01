@@ -13,7 +13,7 @@ function App() {
     <div className='container'>
       <GlobalProvider>
         <Header />
-        <Balance />
+        <Balance Transactions={transactions} />
         <IncomeExpenses />
         <TransactionList Transactions={transactions} />
         <AddTransaction />
