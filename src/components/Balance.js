@@ -1,7 +1,10 @@
 import React from "react";
+import { GlobalContext } from "../context/GlobalState";
 
-function Balance({ Transactions }) {
-  const Amounts = Transactions.map((transaction) => transaction.amount);
+function Balance() {
+  const { transactions } = React.useContext(GlobalContext);
+  console.log(transactions);
+  const Amounts = transactions.map((transaction) => transaction.amount);
   const total = Amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
   return (
     <>
