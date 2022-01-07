@@ -1,7 +1,8 @@
 import React from "react";
-
-function IncomeExpenses({ Transactions }) {
-  const amounts = Transactions.map((transaction) => transaction.amount);
+import { GlobalContext } from "../context/GlobalState";
+function IncomeExpenses() {
+  const { transactions } = React.useContext(GlobalContext);
+  const amounts = transactions.map((transaction) => transaction.amount);
   console.log(amounts);
   const income = amounts
     .filter((item) => item > 0)
